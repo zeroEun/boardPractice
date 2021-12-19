@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.boardPractice.board.model.dao.BoardDao">
+
+    <resultMap id="boardResultSet" type="Board">
+        <id column="board_no" property="boardNo"/>
+        <result column="board_title" property="boardTitle"/>
+        <result column="board_writer" property="boardWriter"/>
+        <result column="board_content" property="boardContent"/>
+        <result column="create_date" property="createDate"/>
+        <result column="board_status" property="status"/>
+    </resultMap>
+
+    <select id="selectBoardList" resultMap="boardResultSet">
+        SELECT *
+        FROM board
+        ORDER BY BOARD_NO DESC
+    </select>
+
+</mapper>
