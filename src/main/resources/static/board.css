@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.content{
+    width: 70%;
+    margin: auto;
+}
+
+.title{
+    text-align: center;
+    padding: 30px;
+    font-family: 'Dongle', sans-serif;
+}
+
+#writeBtn{
+    margin-bottom: 10px;
+}
+

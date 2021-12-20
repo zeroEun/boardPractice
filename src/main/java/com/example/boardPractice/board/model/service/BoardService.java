@@ -7,4 +7,12 @@ import java.util.ArrayList;
 public interface BoardService {
 
     ArrayList<Board> selectBoardList();
+
+    void insertBoard(Board board);
+
+    Board selectBoard(int boardNo);
+
+    Board updateBoard(Board board);
+
+    int deleteBoard(int boardNo);
 }

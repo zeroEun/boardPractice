@@ -19,4 +19,26 @@
         ORDER BY BOARD_NO DESC
     </select>
 
+    <insert id="insertBoard" parameterType="Board">
+        INSERT INTO board
+        VALUES ( NEXTVAL(BOARD_SEQ), #{boardTitle}, #{boardContent}, #{boardWriter}, DEFAULT , DEFAULT )
+    </insert>
+
+    <select id="selectBoard" parameterType="_int" resultMap="boardResultSet">
+        SELECT *
+        FROM  board
+        WHERE BOARD_NO = ${boardNo}
+    </select>
+
+    <update id="updateBoard" parameterType="Board">
+        UPDATE board
+        SET BOARD_TITLE  = #{boardTitle}, BOARD_CONTENT = #{boardContent}, CREATE_DATE = NOW()
+        WHERE BOARD_NO = ${boardNo}
+    </update>
+
+    <delete id="deleteBoard" parameterType="_int">
+        DELETE FROM board
+        WHERE BOARD_NO = ${boardNo}
+    </delete>
+
 </mapper>
