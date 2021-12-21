@@ -18,7 +18,7 @@ public class BoardController {
     @GetMapping("/")
     public String mainPage(){
 
-        return "board/boardListView";
+        return "main";
     }
 
     @ResponseBody
@@ -26,6 +26,12 @@ public class BoardController {
     public ArrayList<Board> selectBoardList(){
 
         return boardService.selectBoardList();
+    }
+
+    @RequestMapping("listView.bo")
+    public String boardListview(){
+
+        return "board/boardListView";
     }
 
     @RequestMapping("insert.bo")
