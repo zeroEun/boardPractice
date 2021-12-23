@@ -10,31 +10,6 @@
     <!-- CSS
     <link rel="stylesheet" href="/static/board.css">-->
 
-    <style>
-
-        .content{
-            width: 70%;
-            margin: auto;
-        }
-
-        .title{
-            text-align: center;
-            padding: 30px;
-        }
-
-        .title h3{
-            font-family: 'Dongle', sans-serif;
-            font-size: 70px;
-        }
-
-        .btnArea{
-            margin: 10px;
-            text-align: center;
-        }
-
-    </style>
-
-
 </head>
 <body>
 

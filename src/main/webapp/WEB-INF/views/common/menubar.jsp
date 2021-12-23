@@ -17,20 +17,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 
+    <style>
+
+        .content{
+            width: 70%;
+            margin: auto;
+        }
+
+        .title{
+            text-align: center;
+            padding: 30px;
+        }
+
+        .title h3{
+            font-family: 'Dongle', sans-serif;
+            font-size: 70px;
+        }
+
+        #writeBtn{
+            margin-bottom: 10px;
+        }
+
+        .btnArea{
+            margin: 10px;
+            text-align: center;
+        }
+
+    </style>
+
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">practice</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="listView.bo">게시판</a>
-            <a class="nav-item nav-link" href="scraping.htx">사업자상태조회</a>
-            <a class="nav-item nav-link" href="#"></a>
+            <a class="nav-item nav-link" href="scrapingView.htx">사업자상태조회</a>
+            <a class="nav-item nav-link" href="/loginForm">login</a>
         </div>
     </div>
 </nav>

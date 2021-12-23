@@ -40,6 +40,9 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.jsoup/jsoup
 	implementation group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
 
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.5.5'
+
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

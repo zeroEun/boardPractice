@@ -10,29 +10,6 @@
     <!-- CSS
     <link rel="stylesheet" type="text/css" href="/static/board.css">-->
 
-    <style>
-
-        .content{
-            width: 70%;
-            margin: auto;
-        }
-
-        .title{
-            text-align: center;
-            padding: 30px;
-        }
-
-        .title h3{
-            font-family: 'Dongle', sans-serif;
-            font-size: 70px;
-        }
-
-        #writeBtn{
-            margin-bottom: 10px;
-        }
-
-    </style>
-
 </head>
 <body>
 
