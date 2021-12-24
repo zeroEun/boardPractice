@@ -58,7 +58,12 @@
             <a class="nav-item nav-link" href="listView.bo">게시판</a>
             <a class="nav-item nav-link" href="scrapingView.htx">사업자상태조회</a>
             <a class="nav-item nav-link" href="/loginForm">login</a>
+            <a class="nav-item nav-link" href="/logout">logout</a>
         </div>
+    </div>
+
+    <div class="userInfo">
+        <p></p>
     </div>
 </nav>
 

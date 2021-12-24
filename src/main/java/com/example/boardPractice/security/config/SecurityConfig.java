@@ -50,14 +50,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/loginForm").permitAll() //접근 허용
                 .anyRequest().authenticated()
             .and()
-                .formLogin()
+                .formLogin()//로그인페이지
                 .loginPage("/loginForm")
                 .usernameParameter("userId")
                 .passwordParameter("password")
-                .loginProcessingUrl("/authenticate")
-                .failureForwardUrl("/members/loginerror?login_error=1")
+                .loginProcessingUrl("/")
+                .failureForwardUrl("/member/loginerror?login_error=1")
                 .defaultSuccessUrl("/",true)
-                .permitAll();//로그인페이지
+                .permitAll()
+            .and()
+                .logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/");
 
         //authorizeHttpRequests() : 시큐리티 처리 시 HttpServletRequest 사용
         //anyRequest().authenticated() : 클라이언트 모든 요청은 사용자 인증이 되어야 가능

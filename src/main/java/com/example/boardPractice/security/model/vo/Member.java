@@ -10,7 +10,6 @@ import lombok.*;
 @AllArgsConstructor
 public class Member {
 
-    private int userNo;
     private String userName;
     private String userId;
     private String password;

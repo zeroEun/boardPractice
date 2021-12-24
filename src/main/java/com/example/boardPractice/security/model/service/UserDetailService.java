@@ -35,6 +35,7 @@ public class UserDetailService implements UserDetailsService {
         //유저 정보가 있을 경우에는 UserDetail인터페이스를 구현한 객체 리턴
         UserDetail userDetail = new UserDetail();
         userDetail.setUsername(user.getUserId());
+        userDetail.setName(user.getName());
         userDetail.setPassword(user.getPassword());
 
         List<UserRole> userRoles = userDbService.getUserRoles(userId);

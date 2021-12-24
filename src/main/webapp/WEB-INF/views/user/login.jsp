@@ -16,7 +16,7 @@
 
     <h2>Login Form</h2>
 
-    <form method="post" action="/authenticate">
+    <form method="post" action="/">
 
         <div class="container">
             <label for="userId"><b>Username</b></label>

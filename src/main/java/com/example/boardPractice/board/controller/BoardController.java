@@ -2,11 +2,15 @@ package com.example.boardPractice.board.controller;
 
 import com.example.boardPractice.board.model.service.BoardService;
 import com.example.boardPractice.board.model.vo.Board;
+import com.example.boardPractice.security.model.vo.UserDetail;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.ArrayList;
 
 @Controller

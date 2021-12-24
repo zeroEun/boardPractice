@@ -14,10 +14,18 @@ public class MemberController {
 
     //config .loginPage("/loginForm")와 동일
     @GetMapping("/loginForm")
-    public String loginForm(){
+    public String loginForm(String userId, String password){
 
         return "user/login";
     }
 
+    @GetMapping("/logout")
+    public String logout(){
+
+        return "redirect:/";
+    }
+
+    //UserDetail userDetail = (UserDetail) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    // String username = userDetail.getUsername();
 
 }
