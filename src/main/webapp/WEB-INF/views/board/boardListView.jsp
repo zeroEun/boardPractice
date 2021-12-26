@@ -49,7 +49,7 @@
                         <label for="boardTitle">제목</label>
                         <input type="text" class="form-control" name="boardTitle" id="boardTitle" required>
                         <label for="boardWriter">작성자</label>
-                        <input type="text" class="form-control" name="boardWriter" id="boardWriter" required>
+                        <input type="text" class="form-control" name="boardWriter" id="boardWriter" readonly>
                         <label for="boardContent">내용</label>
                         <textarea class="form-control" name="boardContent" id="boardContent" rows="5" required></textarea>
 

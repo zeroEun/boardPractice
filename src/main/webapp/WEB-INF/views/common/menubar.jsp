@@ -15,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
     <style>
 
@@ -30,8 +30,8 @@
         }
 
         .title h3{
-            font-family: 'Dongle', sans-serif;
-            font-size: 70px;
+            <%--font-family: 'Jua', sans-serif;--%>
+
         }
 
         #writeBtn{
@@ -49,7 +49,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">practice</a>
+    <a class="navbar-brand" href="/">practice</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,15 +57,57 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="listView.bo">게시판</a>
             <a class="nav-item nav-link" href="scrapingView.htx">사업자상태조회</a>
-            <a class="nav-item nav-link" href="/loginForm">login</a>
-            <a class="nav-item nav-link" href="/logout">logout</a>
         </div>
     </div>
 
-    <div class="userInfo">
-        <p></p>
+    <div class="userInfo" >
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" id="userId"> </a>
+            <a class="nav-item nav-link" id="login" href="/loginForm">login</a>
+            <a class="nav-item nav-link" id="logout" href="/logout">logout</a>
+        </div>
     </div>
 </nav>
 
+<script>
+
+    $(function (){
+
+        getUserId();
+
+    });
+
+    function getUserId(){
+
+        $.ajax({
+            url:"/selectUserId",
+            type:"GET",
+            success: function (userId){
+
+                if(userId != 'anonymousUser'){
+                    $('#userId').text(userId);
+                    $('#boardWriter').val(userId);
+                    $('#login').hide();
+                    $('#logout').show();
+                }else{
+                    $('#logout').hide();
+                    $('#login').show();
+                }
+
+                var writer = $('#boardDWriter').val();
+                if(userId != writer){
+                    console.log("id" + userId + "writer" + writer);
+                    $('#updateBtn').attr('disabled', true);
+                    $('#deleteBtn').attr('disabled', true);
+                }
+            },
+            error: function (){
+                console.log("ajax 통신 실패");
+            }
+        });
+
+    }
+
+</script>
 </body>
 </html>

@@ -48,7 +48,6 @@ public class UserDetailService implements UserDetailsService {
             }
         }
 
-
         //userDetail객체에 권한 목록 설정
         userDetail.setAuthorities(authorities);
         userDetail.setEnabled(true);

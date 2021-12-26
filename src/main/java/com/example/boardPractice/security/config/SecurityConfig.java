@@ -47,7 +47,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()//authorizeHttpRequests() 작성 시 오류 //nested exception is java.lang.IllegalStateException: permitAll only works with HttpSecurity.authorizeRequests()
-                .antMatchers("/", "/loginForm").permitAll() //접근 허용
+                .antMatchers("/", "/loginForm", "/selectUserId").permitAll() //접근 허용
+                .antMatchers("/listView.bo").hasAuthority("ROLE_USER")
                 .anyRequest().authenticated()
             .and()
                 .formLogin()//로그인페이지

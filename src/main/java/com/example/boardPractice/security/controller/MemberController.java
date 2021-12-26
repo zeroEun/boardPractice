@@ -25,7 +25,4 @@ public class MemberController {
         return "redirect:/";
     }
 
-    //UserDetail userDetail = (UserDetail) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    // String username = userDetail.getUsername();
-
 }

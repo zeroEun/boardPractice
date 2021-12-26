@@ -10,6 +10,11 @@
         <result column="user_password" property="password"/>
     </resultMap>
 
+    <resultMap id="memberRoleResultMap" type="com.example.boardPractice.security.model.vo.UserRole">
+        <id column="user_id" property="userId"/>
+        <result column="role_name" property="roleName"/>
+    </resultMap>
+
 
     <select id="getMemberById" parameterType="String" resultMap="memberResultMap">
         SELECT *
@@ -17,7 +22,7 @@
         WHERE USER_ID = #{userId}
     </select>
 
-    <select id="getRolesById" parameterType="String" resultMap="memberResultMap">
+    <select id="getRolesById" parameterType="String" resultMap="memberRoleResultMap">
         SELECT *
         FROM user_role
         WHERE USER_ID = #{userId}

@@ -39,14 +39,14 @@
 
         <label for="boardTitle">제목</label>
         <input type="text" class="form-control" name="boardTitle" id="boardTitle" value="${b.boardTitle}" required>
-        <label for="boardWriter">작성자</label>
-        <input type="text" class="form-control" name="boardWriter" id="boardWriter"  value="${b.boardWriter}" readonly>
+        <label for="boardDWriter">작성자</label>
+        <input type="text" class="form-control" name="boardWriter" id="boardDWriter"  value="${b.boardWriter}" readonly>
         <label for="boardContent">내용</label>
         <textarea class="form-control" name="boardContent" id="boardContent" rows="5" required>${b.boardContent}</textarea>
 
         <div class="btnArea">
             <button type="button" class="btn btn-secondary" id="cancelBtn">취소</button>
-            <button type="submit" class="btn btn-primary">수정</button>
+            <button type="submit" class="btn btn-primary" id="updateBtn">수정</button>
             <button type="button" class="btn btn-danger" id="deleteBtn">삭제</button>
         </div>
 
@@ -57,6 +57,8 @@
 <script>
 
     $(function(){
+
+
         $('#cancelBtn').on('click', function(){
             location.href="listView.bo";
         });

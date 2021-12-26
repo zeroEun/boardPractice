@@ -12,5 +12,9 @@
 
 <jsp:include page="common/menubar.jsp" />
 
+<div class="content">
+
+</div>
+
 </body>
 </html>

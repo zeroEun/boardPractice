@@ -19,12 +19,6 @@ public class BoardController {
     @Autowired
     private BoardService boardService;
 
-    @GetMapping("/")
-    public String mainPage(){
-
-        return "main";
-    }
-
     @ResponseBody
     @RequestMapping(value = "selectList.bo", produces = "application/json; charset=UTF-8")
     public ArrayList<Board> selectBoardList(){
@@ -32,13 +26,13 @@ public class BoardController {
         return boardService.selectBoardList();
     }
 
-    @RequestMapping("listView.bo")
+    @RequestMapping("/listView.bo")
     public String boardListview(){
 
         return "board/boardListView";
     }
 
-    @RequestMapping("insert.bo")
+    @RequestMapping("/insert.bo")
     public String insertBoard(Board board, Model model){
 
         boardService.insertBoard(board);
@@ -47,7 +41,7 @@ public class BoardController {
         return "board/boardListView";
     }
 
-    @RequestMapping("boardDetail.bo")
+    @RequestMapping("/boardDetail.bo")
     public String selectBoard(int boardNo, Model model){
 
         Board board = boardService.selectBoard(boardNo);
@@ -56,7 +50,7 @@ public class BoardController {
         return "board/boardDetailView";
     }
 
-    @RequestMapping("update.bo")
+    @RequestMapping("/update.bo")
     public String updateBoard(Board board, Model model){
 
         Board b = boardService.updateBoard(board);
@@ -68,16 +62,11 @@ public class BoardController {
     }
 
     @ResponseBody
-    @RequestMapping("delete.bo")
+    @RequestMapping("/delete.bo")
     public String deleteBoard(@RequestParam int boardNo){
 
-        int result = boardService.deleteBoard(boardNo);
+        return boardService.deleteBoard(boardNo);
 
-        if(result > 0){
-            return "true";
-        }else {
-            return "false";
-        }
     }
 
 }
