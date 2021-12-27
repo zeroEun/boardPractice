@@ -25,4 +25,10 @@ public class MemberController {
         return "redirect:/";
     }
 
+    @GetMapping("/loginError")
+    public String loginError(){
+
+        return "user/loginError";
+    }
+
 }

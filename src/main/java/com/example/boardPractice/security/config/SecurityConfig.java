@@ -48,7 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()//authorizeHttpRequests() 작성 시 오류 //nested exception is java.lang.IllegalStateException: permitAll only works with HttpSecurity.authorizeRequests()
                 .antMatchers("/", "/loginForm", "/selectUserId").permitAll() //접근 허용
-                .antMatchers("/listView.bo").hasAuthority("ROLE_USER")
+                .antMatchers("/scrapingView.htx").hasAuthority("ROLE_ADMIN")
                 .anyRequest().authenticated()
             .and()
                 .formLogin()//로그인페이지
@@ -56,13 +56,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("userId")
                 .passwordParameter("password")
                 .loginProcessingUrl("/")
-                .failureForwardUrl("/member/loginerror?login_error=1")
+                .failureUrl("/loginError")
                 .defaultSuccessUrl("/",true)
                 .permitAll()
             .and()
                 .logout()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/");
+                .logoutSuccessUrl("/")
+            .and()
+                .exceptionHandling()
+                .accessDeniedPage("/WEB-INF/views/common/403error.jsp");
 
         //authorizeHttpRequests() : 시큐리티 처리 시 HttpServletRequest 사용
         //anyRequest().authenticated() : 클라이언트 모든 요청은 사용자 인증이 되어야 가능

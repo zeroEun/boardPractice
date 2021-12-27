@@ -57,6 +57,7 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="listView.bo">게시판</a>
             <a class="nav-item nav-link" href="scrapingView.htx">사업자상태조회</a>
+            <a class="nav-item nav-link" href="/NXView">사업자상태조회</a>
         </div>
     </div>
 

@@ -73,14 +73,14 @@ public class HtxScrapingController {
 
     }
 
-    @GetMapping("scrapingView.htx")
+    @GetMapping("/scrapingView.htx")
     public String htxScrapingView(){
 
         return "htxScraping/htxScrapingView";
     }
 
     @ResponseBody
-    @GetMapping("scraping.htx")
+    @GetMapping("/scraping.htx")
     public Map htxScraping(String inputNo) throws IOException, ParserConfigurationException, SAXException {
 
          return htxScrapingService.htxScraping(inputNo);
