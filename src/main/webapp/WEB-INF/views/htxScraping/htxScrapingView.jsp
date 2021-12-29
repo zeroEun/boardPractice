@@ -11,17 +11,25 @@
 
         #inputNo{
             width: 200px;
+
         }
 
         .search{
-            background-color: beige;
-            margin: 50px 0px;
-            padding: 50px;
+            display: flex;
+            background-color: rgb(250, 248, 248);
+            margin: 30px 0px;
+            padding: 30px;
         }
 
         .resultContent{
-            background-color: beige;
-            padding: 50px;
+            background-color: rgb(250, 248, 248);
+            padding: 30px;
+        }
+
+        .htxText{
+            font-weight: bolder;
+            margin-right: 50px;
+            margin-top: auto;
         }
 
     </style>
@@ -38,13 +46,13 @@
     </div>
 
     <div class="search">
-        <label for="inputNo">사업자등록번호</label>
+        <label for="inputNo" class="htxText">사업자등록번호</label>
         <input type="text" class="form-control" id="inputNo">
         <button type="button" class="btn btn-primary" id="inputBtn">조회하기</button>
     </div>
 
     <div class="resultContent">
-        <p>사업자 등록 상태</p>
+        <p class="htxText">사업자 등록 상태</p>
         <p id="result"></p>
     </div>
 

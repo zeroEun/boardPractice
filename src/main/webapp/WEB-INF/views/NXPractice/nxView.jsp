@@ -7,6 +7,18 @@
     <meta charset="UTF-8">
     <title>login</title>
 
+    <style>
+
+        .jsonText{
+            height: 70vh;
+        }
+        .jsonTextArea{
+            margin: 10px 10px 0px 0px;
+        }
+
+    </style>
+
+
 </head>
 <body>
 
@@ -20,14 +32,14 @@
 
     <button type="button" class="btn btn-primary" id="setupBtn">설치확인</button>
     <button type="button" class="btn btn-primary" id="executeBtn">수집</button>
+    <button type="button" class="btn btn-primary" id="certSelectBtn">인증서목록뷰</button>
+    <button type="button" class="btn btn-primary" id="certSelectBtn">인증서목록뷰</button>
 
-    <textarea class="form-control" id="inJson" rows="20">
+    <div class="d-flex jsonText">
+        <textarea class="form-control jsonTextArea" id="inJson" rows="20"></textarea>
+        <textarea class="form-control jsonTextArea" id="outJson" rows="20"></textarea>
+    </div>
 
-    </textarea>
-
-    <textarea class="form-control" id="outJson" rows="20">
-
-    </textarea>
 
 </div>
 
@@ -49,8 +61,32 @@
 
         });
 
+        $('#certSelectBtn').on('click', function (){
+
+            loadDoc('certSelect', setCertSelect());
+
+        });
 
     })
+
+    function setCertSelect(){
+
+        //'{"certImageUrl": "", "nxKeypad": ""[, "enc":"1"]}'
+        return '{"certImageUrl": "", "nxKeypad": ""}';
+    }
+
+    function certEncoding(data){
+        let inJson = new Object();
+
+        inJson.orgCd = 'common';
+        inJson.svcCd = 'getCertInfo';
+        inJson.appCd = '';
+        inJson.signCert = data.file1;
+        inJson.signPri = data.file2;
+        inJson.signPw = data.cert_pw;
+
+        loadDoc('execute', JSON.stringify(inJson));
+    }
 
     function loadDoc(s_op, s_inJson) {
         //crossDomain : true, crossOrigin : true 다른 도메인에서 데이터 가져올 때, htts에서 https로 데이터 가져올 때 CORS에러 방지
@@ -66,6 +102,11 @@
             success: function (data) {
                 console.log(data)
                 $('#outJson').val(JSON.stringify(data, null, 5));
+
+                <%--
+                if(s_op == 'certSelect'){
+                    certEncoding(data);
+                }--%>
             },
             error: function (xhr, status, error) {
                 console.log(status + error);
@@ -86,7 +127,6 @@
                 } else {
                     console.log(status + error);
                 }
-
             }
         });
 

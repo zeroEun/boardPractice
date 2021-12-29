@@ -20,7 +20,7 @@ public class BoardController {
     private BoardService boardService;
 
     @ResponseBody
-    @RequestMapping(value = "selectList.bo", produces = "application/json; charset=UTF-8")
+    @RequestMapping(value = "/selectList.bo", produces = "application/json; charset=UTF-8")
     public ArrayList<Board> selectBoardList(){
 
         return boardService.selectBoardList();
